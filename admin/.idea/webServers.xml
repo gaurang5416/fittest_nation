@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="98136872-9a00-44d2-b8ac-ab047be376a2" name="Gym" url="http://tf.schonglobal.com">
+        <fileTransfer host="tf.schonglobal.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f6af3e8c-c80c-4736-b4c9-d5ce7f72bdff" name="Gym admin" url="http://gym.schonglobal.com">
+        <fileTransfer host="gym.schonglobal.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
