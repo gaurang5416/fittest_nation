@@ -55,7 +55,7 @@ $(document).ready(function() {
 	if($edit)
 	{
 	$date = $data['birth_date'];
-	$birthday = $date->format($this->Gym->getSettings("date_format"));
+	$birthday = $date ? $date->format($this->Gym->getSettings("date_format")): '';
 	//$birthday = $this->Gym->dateformat_PHP_to_jQueryUI($this->Gym->getSettings("date_format"));
 
 	?>

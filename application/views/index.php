@@ -1,4 +1,4 @@
-
+<!-- Banner start -->
 <div class="banner-section bg-black text-white">
 	<div class="container">
 		<div class="home-carousel owl-carousel owl-theme">
@@ -21,13 +21,13 @@
 				<div class="item">
 					<div class="banner-main position-relative">
 						<div class="banner-content"><span
-									class="new-tag mb-4 wow fadeInDownBig">                    <small>New</small> High Intensity workout to burn calories                </span>
+								class="new-tag mb-4 wow fadeInDownBig">                    <small>New</small> High Intensity workout to burn calories                </span>
 							<h1 class="wow fadeInLeftBig"> Cardio<br>Exercise </h1>
 							<p class="wow fadeInLeftBig"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 								do
 								eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 							<div class="banner-btn-div wow fadeInLeftBig"><a
-										href="#" class="btn btn-primary mx-1"> Get
+									href="#" class="btn btn-primary mx-1"> Get
 									Started </a> <a href="#" class="btn btn-primary"> Preview </a></div>
 						</div>
 						<div class="banner-right-div wow fadeInRightBig">
@@ -46,13 +46,13 @@
 				<div class="item">
 					<div class="banner-main position-relative">
 						<div class="banner-content"><span
-									class="new-tag mb-4 wow fadeInDownBig">                    <small>New</small> High Intensity workout to burn calories                </span>
+								class="new-tag mb-4 wow fadeInDownBig">                    <small>New</small> High Intensity workout to burn calories                </span>
 							<h1 class="wow fadeInLeftBig"> Cardio<br>Exercise </h1>
 							<p class="wow fadeInLeftBig"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
 								do
 								eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 							<div class="banner-btn-div wow fadeInLeftBig"><a
-										href="#" class="btn btn-primary mx-1"> Get
+									href="#" class="btn btn-primary mx-1"> Get
 									Started </a> <a href="#" class="btn btn-primary"> Preview </a></div>
 						</div>
 						<div class="banner-right-div wow fadeInRightBig">
@@ -85,17 +85,17 @@
 			<?php if (count($popular_classes) > 0) { ?>
 				<?php foreach ($popular_classes as $var) { ?>
 					<div class="col-sm-6 col-md-4 wow fadeInUp">
-						<a href="<?php echo base_url(); ?>classes">
+						<a href="<?php echo base_url(); ?>membership/<?= $var['id'] ?>">
 							<div class="exercise-card">
 								<div class="exe-card-img">
 									<img src="<?php echo base_url(); ?>admin/upload/<?= json_decode($var['image'])[0] ?>"
 										 onerror="this.src='<?php echo base_url(); ?>admin/img/not_found.png';"
 										 alt="img" class="img-fluid">
-<!--									<span class="timespan">58:24</span>-->
+									<!--									<span class="timespan">58:24</span>-->
 								</div>
 								<div class="exe-footer">
 									<h1><?= $var['class_name'] ?></h1>
-<!--									<p class="text-sec"> 250 est calories </p>-->
+									<!--									<p class="text-sec"> 250 est calories </p>-->
 								</div>
 							</div>
 						</a>

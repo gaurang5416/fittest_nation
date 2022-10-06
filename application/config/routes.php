@@ -20,6 +20,7 @@ $route['posts'] = 'posts/index';
 $route['classes'] = "Classes/index";
 $route['classes/(:any)'] = 'Classes/index/$1';
 $route['membership'] = 'Membership/index';
+$route['membership/(:any)'] = 'Membership/index/$1';
 $route['membership_submit'] = 'Membership/save';
 $route['personal_trainer'] = 'PersonalTrainer/index';
 $route['login'] = 'Users/login';

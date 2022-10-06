@@ -113,6 +113,19 @@ class Users extends CI_Controller
 	public function my_account()
 	{
 		$data['title'] = 'My account';
+		$data['user_data'] = $this->User_Model->get_user_detail();
+		$data['membership_history'] = $this->User_Model->get_membership_history();
+		$data['classes_history'] = $this->User_Model->get_class_history();
+		if ($_POST) {
+
+			// Update user
+			$member_data = array('first_name' => $this->input->post('first_name'), 'last_name' => $this->input->post('last_name'), 'mobile' => $this->input->post('mobile'));
+			$this->db->where('id', $this->session->userdata('user_id'))->update('gym_member', $member_data);
+
+			//Set Message
+			$this->session->set_flashdata('profile_updated', 'Successfully updated.');
+			redirect('/my_account');
+		}
 		$this->load->view('templates/header', $data);
 		$this->load->view('users/my_account', $data);
 		$this->load->view('templates/footer');

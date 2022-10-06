@@ -224,10 +224,19 @@ Class GymMemberController extends AppController
 		else{
 			$classes = array();
 		} */
-		foreach($membership_classes as $value){
 
-			$membership_classes_id[]=$value['membership_class'];
+
+		if(count($membership_classes) > 0) {
+			$membership_classes = $membership_classes[0]["membership_class"];
+			$membership_classes = str_ireplace(array("[", "]", "'"), "", $membership_classes);
+			$membership_classes = explode(",", $membership_classes);
+			foreach ($membership_classes as $value) {
+				$membership_classes_id[] = intval(json_decode($value));
+			}
+		} else {
+			$membership_classes_id = '';
 		}
+
 
 		if(!empty($membership_classes_id))
 		{

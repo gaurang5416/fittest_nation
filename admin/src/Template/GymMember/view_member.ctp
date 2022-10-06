@@ -45,11 +45,15 @@ $(".sub-history").dataTable({
 					$logo = $data['image'];
 					$logo = (!empty($logo)) ? "/webroot/upload/". $logo : "Thumbnail-img2.png";
 					echo $this->Html->image($logo,["style"=>"height:140px;width:180px"]);
-				
+
 				$date = $data['birth_date'];
-				$timestamp = $date->getTimestamp();
-				$date->setTimestamp($timestamp);
-				$birthday = $this->Gym->get_db_format($date->format($this->Gym->getSettings("date_format")));
+				if ($date) {
+					$timestamp = $date ? $date->getTimestamp() : '';
+					$date->setTimestamp($timestamp);
+					$birthday = $this->Gym->get_db_format($date->format($this->Gym->getSettings("date_format")));
+				} else {
+					$birthday = '';
+				}
 				
 				?>
 				<div style="width: 80%;margin: 10px 0px 0px 20px;">

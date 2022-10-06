@@ -26,17 +26,17 @@
 			<?php if (count($classes) > 0) { ?>
 				<?php foreach ($classes as $var) { ?>
 					<div class="col-sm-6 col-md-4 wow fadeInUp">
-						<a href=" <?php echo base_url(); ?>classes">
+						<a href=" <?= base_url(); ?>membership/<?= $var->id ?>">
 							<div class="exercise-card">
 								<div class="exe-card-img">
 									<img src="<?php echo base_url(); ?>admin/upload/<?= json_decode($var->image)[0] ?>"
 										 onerror="this.src='<?php echo base_url(); ?>admin/img/not_found.png';"
 										 alt="img" class="img-fluid">
-<!--									<span class="timespan"> 58:24 </span>-->
+									<!--									<span class="timespan"> 58:24 </span>-->
 								</div>
 								<div class="exe-footer">
 									<h1><?= $var->class_name ?></h1>
-<!--									<p class="text-sec"> 250 est calories </p>-->
+									<!--									<p class="text-sec"> 250 est calories </p>-->
 								</div>
 							</div>
 						</a>
@@ -47,8 +47,6 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="pagination-div mt-4">
-
-
 					<nav aria-label="Page navigation">
 						<ul class="pagination justify-content-md-end justify-content-center">
 

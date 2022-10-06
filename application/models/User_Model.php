@@ -55,4 +55,35 @@ class User_Model extends CI_Model
 			return false;
 		}
 	}
+
+	// Get User detail
+	public function get_user_detail()
+	{
+		$result = $this->db->get_where('gym_member', array('id' => $this->session->userdata('user_id')));
+		return $result->row_array();
+	}
+
+	// Get Membership history
+	public function get_membership_history()
+	{
+		$result = $this->db->select('membership.membership_label, membership_payment.membership_amount, membership_payment.paid_amount, 
+            membership_payment.created_date, membership_payment_history.payment_method')
+			->from('membership')
+			->where('membership_payment.member_id', $this->session->userdata('user_id'))
+			->join('membership_payment', 'membership.id = membership_payment.membership_id', 'LEFT')
+			->join('membership_payment_history', 'membership_payment.mp_id = membership_payment_history.mp_id', 'LEFT')
+			->get();
+		return $result->result();
+	}
+
+	// Get Class history
+	public function get_class_history()
+	{
+		$result = $this->db->select('class_schedule.class_name, class_schedule.class_fees, class_booking.booking_date, class_booking.payment_by')
+			->from('class_booking')
+			->where('class_booking.email', $this->session->userdata('email'))
+			->join('class_schedule', 'class_booking.class_id = class_schedule.id', 'LEFT')
+			->get();
+		return $result->result();
+	}
 }
