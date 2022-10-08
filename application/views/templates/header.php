@@ -40,12 +40,31 @@
 							<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>personal_trainer">Personal
 									Trainer</a></li>
 							<?php if ($this->session->userdata('login')) { ?>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>my_account">My account</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>logout">Logout</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>my_account">My
+										account</a></li>
+								<li class="nav-item"><a class="nav-link"
+														href="<?php echo base_url(); ?>logout">Logout</a></li>
 							<?php } else { ?>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>login">Login</a></li>
-								<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>register">Register</a></li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>login">Login</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>register">Register</a>
+								</li>
 							<?php } ?>
+
+							<?php
+							if (isset($_COOKIE['shopping_cart'])) {
+								$cookie_data = stripslashes($_COOKIE['shopping_cart']);
+								$cart_data = json_decode($cookie_data, true);
+							} else {
+								$cart_data = [];
+							}
+							?>
+
+							<li class="nav-item cart">
+								<span class="count"><?= count($cart_data) ?></span>
+								<a class="nav-link" href="<?php echo base_url(); ?>cart"><span
+										class="fas fa-cart-plus"></span></a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -81,4 +100,24 @@
 	<?php if ($this->session->flashdata('profile_updated')) { ?>
 		<div class='flash_error alert alert-success'><?= $this->session->flashdata('profile_updated') ?> </div>
 		<?php unset($_SESSION['profile_updated']); ?>
+	<?php } ?>
+
+	<?php if ($this->session->flashdata('item_added_to_cart')) { ?>
+		<div class='flash_error alert alert-success'><?= $this->session->flashdata('item_added_to_cart') ?> </div>
+		<?php unset($_SESSION['item_added_to_cart']); ?>
+	<?php } ?>
+
+	<?php if ($this->session->flashdata('already_added_to_cart')) { ?>
+		<div class='flash_error alert alert-warning'><?= $this->session->flashdata('already_added_to_cart') ?> </div>
+		<?php unset($_SESSION['already_added_to_cart']); ?>
+	<?php } ?>
+
+	<?php if ($this->session->flashdata('already_buy_class')) { ?>
+		<div class='flash_error alert alert-warning'><?= $this->session->flashdata('already_buy_class') ?> </div>
+		<?php unset($_SESSION['already_buy_class']); ?>
+	<?php } ?>
+
+	<?php if ($this->session->flashdata('already_added_membership_to_cart')) { ?>
+		<div class='flash_error alert alert-warning'><?= $this->session->flashdata('already_added_membership_to_cart') ?> </div>
+		<?php unset($_SESSION['already_added_membership_to_cart']); ?>
 	<?php } ?>

@@ -17,14 +17,14 @@
 						<div class="col-12 col-sm-12">
 							<div class="form-group">
 								<label>Email</label>
-								<input type="email" class="form-control" placeholder="Enter Email"
+								<input type="email" class="form-control" placeholder="Enter Email" required
 									   name="email" id="email">
 							</div>
 						</div>
 						<div class="col-12 col-sm-12">
 							<div class="form-group">
 								<label>Password</label>
-								<input type="password" class="form-control" placeholder="Enter Password"
+								<input type="password" class="form-control" placeholder="Enter Password" required
 									   name="password" id="password">
 							</div>
 						</div>

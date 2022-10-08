@@ -41,5 +41,5 @@
 <script src="<?php echo base_url(); ?>assets/js/wow.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/custom.js"></script></html>
 <script>
-	$(".flash_error").fadeIn(1000).fadeOut(5000);
+	$(".flash_error").fadeIn(1000).fadeOut(10000);
 </script>

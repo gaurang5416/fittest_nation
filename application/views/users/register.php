@@ -20,7 +20,7 @@
 							<div class="form-group">
 								<label>First Name</label>
 								<input type="text" class="form-control" placeholder="Enter First Name"
-									   value="<?= set_value('first_name');?>"
+									   value="<?= set_value('first_name');?>" required
 									   name="first_name" id="firstname">
 							</div>
 						</div>
@@ -28,7 +28,7 @@
 							<div class="form-group">
 								<label>Last Name</label>
 								<input type="text" class="form-control" placeholder="Enter Last Name"
-									   value="<?= set_value('last_name');?>"
+									   value="<?= set_value('last_name');?>" required
 									   name="last_name" id="lastname">
 							</div>
 						</div>
@@ -36,7 +36,7 @@
 							<div class="form-group">
 								<label>Mobile No.</label>
 								<input type="text" class="form-control" placeholder="Enter Mobile No."
-									   value="<?= set_value('mobile');?>"
+									   value="<?= set_value('mobile');?>" required
 									   name="mobile"  id="mobileno">
 							</div>
 						</div>
@@ -44,7 +44,7 @@
 							<div class="form-group">
 								<label>Email</label>
 								<input type="email" class="form-control" placeholder="Enter Email"
-									   value="<?= set_value('email');?>"
+									   value="<?= set_value('email');?>" required
 									   name="email" id="email">
 							</div>
 						</div>
@@ -52,14 +52,14 @@
 							<div class="form-group">
 								<label>Password</label>
 								<input type="password" class="form-control" placeholder="Enter Password"
-									   name="password" id="password">
+									   name="password" id="password" required>
 							</div>
 						</div>
 						<div class="col-12 col-sm-12">
 							<div class="form-group">
 								<label>Confirm Password</label>
 								<input type="password" class="form-control" placeholder="Enter Confirm Password"
-									   name="confirm_password" id="confirmpassword">
+									   name="confirm_password" id="confirmpassword" required>
 							</div>
 						</div>
 						<div class="col-md-12">

@@ -27,11 +27,16 @@ $route['login'] = 'Users/login';
 $route['logout'] = 'Users/logout';
 $route['login_submit'] = 'Users/login_submit';
 $route['my_account'] = 'Users/my_account';
-$route['checkout'] = 'Users/checkout';
 $route['forgot_password'] = 'Users/forgot_password';
 $route['thank_you'] = 'Pages/thank_you';
 $route['pages'] = 'Pages/view';
 $route['default_controller'] = 'Home/index';
+
+$route['checkout'] = 'Checkout/index';
+$route['cart'] = 'Checkout/cart';
+$route['add_to_cart'] = 'Checkout/addToCart';
+$route['remove_cart'] = 'Checkout/removeCart';
+$route['checkout_submit'] = 'Checkout/save';
 
 //$route['(:any)'] = 'pages/view/$1';
 $route['404_override'] = '';

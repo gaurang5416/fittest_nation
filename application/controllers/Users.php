@@ -131,14 +131,6 @@ class Users extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
-	public function checkout()
-	{
-		$data['title'] = 'Checkout';
-		$this->load->view('templates/header', $data);
-		$this->load->view('users/checkout', $data);
-		$this->load->view('templates/footer');
-	}
-
 	public function forgot_password()
 	{
 		$data['title'] = 'Checkout';
