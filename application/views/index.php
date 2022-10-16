@@ -172,7 +172,7 @@
 					<div class="work-right-div wow fadeInRightBig"><p class="text-sec"> Lorem ipsum dolor sit amet,
 							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
 							aliqua consectetur adipiscing. </p>
-						<div class="workbtndiv"><a href="<?php echo base_url(); ?>personal_trainer"
+						<div class="workbtndiv"><a href="<?php echo base_url(); ?>membership"
 												   class="btn btn-primary"> Get Started </a></div>
 					</div>
 				</div>

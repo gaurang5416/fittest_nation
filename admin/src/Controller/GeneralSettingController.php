@@ -33,9 +33,10 @@ class GeneralSettingController extends AppController{
 		$this->set("timezone",$time_zones);
 		
 		$xml = Xml::build('../vendor/xml/countrylist.xml');			
-		$currency_xml = Xml::toArray(Xml::build('../vendor/xml/currency-symbols.xml'));;			
-		$this->set('xml',$xml);			
-		$this->set('currency_xml',$currency_xml['currency-symbol']['entry']);	
+		$currency_xml = Xml::toArray(Xml::build('../vendor/xml/currency-symbols.xml'));
+		$this->set('xml',$xml);
+		$currency_xml['currency-symbol']['entry'][] =  array('@code'=>'KD', '@'=>'Kuwait Dinar');
+		$this->set('currency_xml',$currency_xml['currency-symbol']['entry']);
 
 		if($this->request->is("post"))
 		{

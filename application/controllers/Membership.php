@@ -7,6 +7,7 @@ class Membership extends CI_Controller
 
 		$data['title'] = 'Membership';
 		$data['office_number'] = $this->Setting_Model->get_setting_by_key('office_number');
+		$data['currency'] = $this->Setting_Model->get_setting_by_key('currency');
 
 		$class_id = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
 		if ($class_id !== 0) {

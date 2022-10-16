@@ -37,13 +37,6 @@
 	</div>
 <?php } ?>
 
-<div class="ready-section default-padding bg-primary-sec mt-3 wow fadeInUp">
-	<div class="container">
-		<div class="ready-content px-2 text-center"><h1 class="mb-3">ARE YOU READY FOR CHANGES?</h1><a href="#"
-																									   class="btn btn-primary">
-				Check our memberships? </a></div>
-	</div>
-</div><!-- Are ready section end --><!-- Pricing plan section start -->
 <div id="Pricing-Div" class="pricing-section default-padding">
 	<div class="container">
 		<div class="row mb-5 wow fadeInDown">
@@ -65,8 +58,10 @@
 							<input type="hidden" name="hidden_price" value="<?= $var['membership_amount'] ?>">
 							<input type="hidden" name="hidden_type" value="membership">
 							<div class="pricing-head">
-								<h1 class="mb-3"> <?= $var['membership_amount'] ?>$/ <?= $var['membership_length'] ?>
-									Days </h1>
+								<h1 class="mb-3">
+									<?= $var['membership_amount'] ?><?= $currency ?>/ <?= $var['membership_length'] ?>
+									Days
+								</h1>
 								<h5> <?= $var['membership_label'] ?> </h5>
 								<p> <?= $var['membership_class_limit'] ?> </p>
 							</div>

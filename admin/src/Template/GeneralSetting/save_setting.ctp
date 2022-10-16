@@ -301,10 +301,12 @@ $(document).ready(function(){
 			echo "<div class='col-md-8'>";
 
 			echo "<select class='form-control' name='currency'>";
-			foreach($currency_xml as $curr)
-			{?>
-				<option value='<?php echo $curr['@code'];?>' <?php echo($edit && $data['currency'] == $curr['@code']) ? "selected" : "";?>><?php echo $curr["@"];?></option>
-	<?php	}
+			foreach ($currency_xml as $curr) {
+				if ($curr['@code'] === 'KD') { ?>
+					<option
+						value='<?php echo $curr['@code']; ?>' <?php echo ($edit && $data['currency'] == $curr['@code']) ? "selected" : ""; ?>><?php echo $curr["@"]; ?></option>
+				<?php }
+			}
 			echo "</select>";
 			echo "</div>";
 			echo "</div>";

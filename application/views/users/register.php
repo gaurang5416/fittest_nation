@@ -3,7 +3,7 @@
 	<div class='alert alert-danger'><?= validation_errors(); ?></div>
 <?php }?>
 
-<?php echo form_open('register_submit'); ?>
+<?php echo form_open('register_submit' . '/' . $type); ?>
 
 <div class="checkout-section bg-primary-sec default-padding">
     <div class="container">

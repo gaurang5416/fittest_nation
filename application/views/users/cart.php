@@ -27,7 +27,7 @@
 									<?php foreach ($cart_data as $keys => $values) { ?>
 										<tr>
 											<td><?= $values["item_name"]; ?></td>
-											<td>$ <?= $values["item_price"]; ?></td>
+											<td><?= $values["item_price"]; ?> <?= $currency ?></td>
 											<td>
 												<a href="remove_cart?action=delete&id=<?= $values["id_type"]; ?>">
 													<span class="text-danger">Remove</span>
@@ -38,7 +38,7 @@
 									} ?>
 									<tr>
 										<td colspan="2" align="right">Total</td>
-										<td align="right">$ <?php echo number_format($total, 2); ?></td>
+										<td align="right"><?php echo number_format($total, 2); ?> <?= $currency ?></td>
 									</tr>
 								<?php } else { ?>
 									<tr>

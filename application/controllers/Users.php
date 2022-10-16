@@ -17,7 +17,9 @@ class Users extends CI_Controller
 	// Log in User
 	public function login()
 	{
+		$type = $this->uri->segment(2);
 		$data['title'] = 'Sign In';
+		$data['type'] = $type;
 
 		if ($this->session->userdata('login')) {
 			redirect('/');
@@ -31,6 +33,8 @@ class Users extends CI_Controller
 	// Log in User
 	public function login_submit()
 	{
+
+		$type = $this->uri->segment(2);
 
 		if ($this->session->userdata('login')) {
 			redirect('/');
@@ -63,7 +67,11 @@ class Users extends CI_Controller
 
 				//Set Message
 				$this->session->set_flashdata('user_logged_in', 'You are now logged in.');
-				redirect('/');
+				if ($type) {
+					redirect('/' . $type);
+				} else {
+					redirect('/');
+				}
 			} else {
 				$this->session->set_flashdata('login_failed', 'Login is invalid.');
 				redirect('users/login');
@@ -74,7 +82,9 @@ class Users extends CI_Controller
 	// Register User
 	public function register()
 	{
+		$type = $this->uri->segment(2);
 		$data['title'] = 'Sign Up';
+		$data['type'] = $type;
 		$this->load->view('templates/header', $data);
 		$this->load->view('users/register', $data);
 		$this->load->view('templates/footer');
@@ -84,6 +94,7 @@ class Users extends CI_Controller
 	public function register_submit()
 	{
 
+		$type = $this->uri->segment(2);
 		$data['title'] = 'Sign Up';
 
 		$this->form_validation->set_rules('first_name', 'First Name', 'required');
@@ -104,9 +115,27 @@ class Users extends CI_Controller
 
 			$this->User_Model->register($encrypt_password);
 
+			$email = $this->input->post('email');
+			$user_id = $this->User_Model->login($email, $encrypt_password);
+			if ($user_id) {
+
+				$user_data = array(
+					'user_id' => $user_id->id,
+					'username' => $email,
+					'email' => $user_id->email,
+					'login' => true
+				);
+
+				$this->session->set_userdata($user_data);
+			}
+
 			//Set Message
-			$this->session->set_flashdata('user_registered', 'You are registered and can log in.');
-			redirect('/');
+			$this->session->set_flashdata('user_registered', 'Welcome ' . $this->input->post('first_name') . ' ' . $this->input->post('last_name'));
+			if ($type) {
+				redirect('/' . $type);
+			} else {
+				redirect('/');
+			}
 		}
 	}
 

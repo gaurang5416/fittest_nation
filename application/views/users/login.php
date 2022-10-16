@@ -1,7 +1,7 @@
 <?php if(validation_errors() != false){ ?>
 	<div class='alert alert-danger'><?= validation_errors(); ?></div>
 <?php }?>
-<?php echo form_open('login_submit'); ?>
+<?php echo form_open('login_submit' . '/' . $type); ?>
 
 <div class="checkout-section bg-primary-sec default-padding">
 	<div class="container">
@@ -31,11 +31,12 @@
 						<div class="col-12 col-sm-12 text-end">
 							<div class="row">
 								<div class="col-8 text-start">
-									<a href="<?php echo base_url(); ?>register">Do not have an account yet?</a>
+									<a href="<?php echo base_url(); ?>register/<?= $type ?>">Do not have an account
+										yet?</a>
 								</div>
-								<div class="col-4">
-									<a href="<?php echo base_url(); ?>forgot_password">Forgot Password</a>
-								</div>
+								<!--<div class="col-4">
+									<a href="<?php /*echo base_url(); */?>forgot_password">Forgot Password</a>
+								</div>-->
 							</div>
 
 						</div>

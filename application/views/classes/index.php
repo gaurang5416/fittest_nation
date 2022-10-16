@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="ready-content px-2 text-center">
 			<h1 class="mb-3">ARE YOU READY FOR CHANGES?</h1>
-			<a href="#" class="btn btn-primary">
+			<a href="<?php echo base_url(); ?>membership" class="btn btn-primary">
 				Check our memberships?
 			</a>
 		</div>

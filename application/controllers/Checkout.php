@@ -12,7 +12,7 @@ class Checkout extends CI_Controller
 	{
 
 		if (!$this->session->userdata('login')) {
-			redirect('/login');
+			redirect('/login/checkout');
 		}
 
 		$data['title'] = 'Checkout';
@@ -36,7 +36,8 @@ class Checkout extends CI_Controller
 	public function cart()
 	{
 		$data['title'] = 'Cart';
-		$this->load->view('templates/header');
+		$data['currency'] = $this->Setting_Model->get_setting_by_key('currency');
+		$this->load->view('templates/header', $data);
 		$this->load->view('users/cart', $data);
 		$this->load->view('templates/footer');
 	}
