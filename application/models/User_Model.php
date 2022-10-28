@@ -86,4 +86,36 @@ class User_Model extends CI_Model
 			->get();
 		return $result->result();
 	}
+
+	public function send_mail($param)
+	{
+
+		$this->email->from('gaurang5416@gmail.com', 'Gaurang Dudhwala');
+		$this->email->to('gaurang5416@gmail.com');
+
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.');
+
+		/*$from = $param['from'] == '' ? MCC_FROM_EMAIL : $param['from'];
+		$from_name = $param['from_name'] == '' ? MCC_FROM_NAME : $param['from_name'];
+
+		$to = $param['to'];
+		$html = $param['html'];
+		$subject = $param['subject'];
+
+		$this->load->library('email');
+		$this->email->set_newline("\r\n");
+		$this->email->set_mailtype("html");
+		$this->email->from($from, $from_name);
+		$this->email->to($to);
+		$this->email->subject($subject);
+		$this->email->message($html);*/
+
+		if ($this->email->send()) {
+			echo 'Your Email has successfully been sent.';
+		} else {
+			show_error($this->email->print_debugger());
+		}
+
+	}
 }

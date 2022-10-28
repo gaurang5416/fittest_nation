@@ -143,6 +143,7 @@ class Users extends CI_Controller
 	{
 		$data['title'] = 'My account';
 		$data['user_data'] = $this->User_Model->get_user_detail();
+		$data['currency'] = $this->Setting_Model->get_setting_by_key('currency');
 		$data['membership_history'] = $this->User_Model->get_membership_history();
 		$data['classes_history'] = $this->User_Model->get_class_history();
 		if ($_POST) {

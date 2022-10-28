@@ -5,6 +5,10 @@ class Home extends CI_Controller
 
 	public function index()
 	{
+
+//		$this->load->library('email');
+//		$this->User_Model->send_mail([]);
+
 		$data['title'] = 'Home';
 		$data['banners'] = $this->Banner_Model->get_banners();
 		$data['popular_classes'] = $this->Classes_Model->get_popular_classes();

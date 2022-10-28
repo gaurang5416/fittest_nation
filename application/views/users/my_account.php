@@ -68,7 +68,7 @@
 									</div>
 									<div class="row">
 										<div class="col-5"><p>Price :</p></div>
-										<div class="col-7"><p class="text-end">$<?= $var->membership_amount?></p></div>
+										<div class="col-7"><p class="text-end"><?= $var->membership_amount?> <?= $currency ?></p></div>
 									</div>
 									<div class="row">
 										<div class="col-5"><p>Paid By :</p></div>
@@ -89,7 +89,7 @@
 									</div>
 									<div class="row">
 										<div class="col-5"><p>Price :</p></div>
-										<div class="col-7"><p class="text-end">$<?= $var->class_fees?></p></div>
+										<div class="col-7"><p class="text-end"><?= $var->class_fees?> <?= $currency ?></p></div>
 									</div>
 									<div class="row">
 										<div class="col-5"><p>Paid By :</p></div>
